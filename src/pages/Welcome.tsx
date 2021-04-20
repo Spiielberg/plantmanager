@@ -1,27 +1,39 @@
 import React from 'react';
-import { Image, SafeAreaView, StyleSheet, Text } from 'react-native';
+import {
+  Dimensions,
+  Image,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
+import { Feather } from '@expo/vector-icons';
 
 import colors from '../styles/colors';
+import fonts from '../styles/fonts';
 
 import wateringImg from '../assets/watering.png';
 
-import Button from '../components/Button';
-
-const Welcome = (): React.ReactElement => {
+const Welcome: React.FC = (): React.ReactElement => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>
-        Gerencie {'\n'} suas plantas de {'\n'} forma fácil
-      </Text>
+      <View style={styles.wrapper}>
+        <Text style={styles.title}>
+          Gerencie {'\n'} suas plantas de {'\n'} forma fácil
+        </Text>
 
-      <Image style={styles.image} source={wateringImg} />
+        <Image style={styles.image} source={wateringImg} resizeMode='contain' />
 
-      <Text style={styles.subtitle}>
-        Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
-        sempre que precisar.
-      </Text>
+        <Text style={styles.subtitle}>
+          Não esqueça mais de regar suas plantas. Nós cuidamos de lembrar você
+          sempre que precisar.
+        </Text>
 
-      <Button title='>' />
+        <RectButton style={styles.button}>
+          <Feather name='chevron-right' style={styles.buttonIcon} />
+        </RectButton>
+      </View>
     </SafeAreaView>
   );
 };
@@ -29,28 +41,48 @@ const Welcome = (): React.ReactElement => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+
+  wrapper: {
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     paddingHorizontal: 24,
   },
 
   title: {
-    fontSize: 32,
-    fontWeight: 'bold',
+    fontFamily: fonts.heading,
+    fontSize: 28,
+    lineHeight: 34,
     textAlign: 'center',
     color: colors.heading,
     marginTop: 40,
   },
 
   image: {
-    width: 294,
-    height: 285,
+    height: Dimensions.get('window').width * 0.7,
   },
 
   subtitle: {
+    fontFamily: fonts.text,
     fontSize: 18,
     textAlign: 'center',
     color: colors.heading,
+  },
+
+  button: {
+    width: 56,
+    height: 56,
+    backgroundColor: colors.green,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 16,
+    marginBottom: 40,
+  },
+
+  buttonIcon: {
+    fontSize: 32,
+    color: colors.white,
   },
 });
 

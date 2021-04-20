@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "plantmanager",
+    "name": "PlantManager",
     "slug": "plantmanager",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,13 +13,15 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.zealotus.plantmanager",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.zealotus.plantmanager",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
