@@ -1,17 +1,20 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
 
 import colors from '../styles/colors';
 import fonts from '../styles/fonts';
 
-interface ButtonProps {
+interface ButtonProps extends RectButtonProps {
   title: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ title }): React.ReactElement => {
+const Button: React.FC<ButtonProps> = ({
+  title,
+  ...rest
+}): React.ReactElement => {
   return (
-    <RectButton style={styles.button}>
+    <RectButton style={styles.button} {...rest}>
       <Text style={styles.buttonText}>{title}</Text>
     </RectButton>
   );

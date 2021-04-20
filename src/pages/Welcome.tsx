@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Dimensions,
   Image,
@@ -7,6 +7,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/core';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 
@@ -16,6 +17,12 @@ import fonts from '../styles/fonts';
 import wateringImg from '../assets/watering.png';
 
 const Welcome: React.FC = (): React.ReactElement => {
+  const navigation = useNavigation();
+
+  const handleStart = useCallback(() => {
+    navigation.navigate('UserIdentification');
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.wrapper}>
@@ -30,7 +37,7 @@ const Welcome: React.FC = (): React.ReactElement => {
           sempre que precisar.
         </Text>
 
-        <RectButton style={styles.button}>
+        <RectButton style={styles.button} onPress={handleStart}>
           <Feather name='chevron-right' style={styles.buttonIcon} />
         </RectButton>
       </View>

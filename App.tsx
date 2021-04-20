@@ -7,9 +7,9 @@ import {
   Jost_600SemiBold,
 } from '@expo-google-fonts/jost';
 
-import colors from './src/styles/colors';
+import Routes from './src/routes';
 
-import Welcome from './src/pages/Welcome';
+import colors from './src/styles/colors';
 
 const App = () => {
   const [fontsLoaded] = useFonts({
@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <>
-      <Welcome />
+      <Routes />
       <StatusBar backgroundColor={colors.white} barStyle='dark-content' />
     </>
   );
