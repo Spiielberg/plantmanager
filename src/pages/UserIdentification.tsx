@@ -58,7 +58,9 @@ const UserIdentification: React.FC = (): React.ReactElement => {
               onChangeText={handleInputChange}
             />
 
-            <Button title='Confirmar' />
+            <View style={styles.buttonWrapper}>
+              <Button title='Confirmar' />
+            </View>
           </View>
         </View>
       </KeyboardAvoidingView>
@@ -110,6 +112,11 @@ const styles = StyleSheet.create({
     padding: 8,
     borderBottomWidth: 1,
     borderColor: colors.gray,
+  },
+
+  buttonWrapper: {
+    width: '100%',
+    paddingHorizontal: 16,
   },
 });
 
