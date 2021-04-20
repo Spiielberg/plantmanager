@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
   },
 
   subtitle: {
+    color: colors.body,
     fontFamily: fonts.text,
     fontSize: 18,
     textAlign: 'center',
-    color: colors.heading,
   },
 
   button: {

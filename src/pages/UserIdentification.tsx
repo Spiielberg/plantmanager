@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
 
   input: {
     width: '100%',
-    color: colors.heading,
+    color: colors.body,
     fontFamily: fonts.text,
     fontSize: 18,
     textAlign: 'center',
